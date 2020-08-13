@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello StandardController!{% endblock %}
+
+{% block body %}
+    {#Comentarios#}
+    {% set miVariable = 'Hola, Mundo' %}
+    {{ miVariable }}<br>
+
+    {% if num1 > num2 %}
+        Número 1 es mayor
+        {% else %}
+        Número 2 es mayor
+    {% endif %}<br>
+
+    {% set arrayNombres = nombres | split(',') %}
+    {% for nombre in arrayNombres %}
+        -> {{ nombre }}<br>
+    {% endfor %}
+
+
+    <br><br><a href="{{ path('pagina2', {'nombre': 'Leonardo Alcocer'}) }}">Pagina2</a>
+{% endblock %}
